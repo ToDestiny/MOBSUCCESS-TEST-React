@@ -1,4 +1,4 @@
-import  React, { useState, useMapEvents }  from "react";
+import  React, { useState }  from "react";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -6,8 +6,9 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import './App.css';
 
-const coordinates = {london: [51.505, -0.09], paris: [5.505, -0.09]}
+const coordinates = {london: [51.505, -0.09], paris: [48.8534, 2.3488]}
 
+// eslint-disable-next-line
 function App() {
 
   const [city, setCity] = useState("london")
@@ -16,7 +17,7 @@ function App() {
   return (
     <div>
       <FormControl variant="outlined">
-        <InputLabel id="demo-simple-select-outlined-label">Ville</InputLabel>
+        <InputLabel>Ville</InputLabel>
         <Select value={city} onChange={e => setCity(e.target.value)}>
           <MenuItem value="london">Londres</MenuItem>
           <MenuItem value="paris">Paris</MenuItem>
